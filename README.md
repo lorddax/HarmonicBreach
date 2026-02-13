@@ -1,8 +1,3 @@
-Yes, adding a README is worth it, especially since you’re aiming for long-term, multi‑agent collaboration.
-
-Here’s a `README.md` you can paste in and tweak:
-
-```markdown
 # Harmonic Breach
 
 **Harmonic Breach: Delve Protocol** is a cooperative, card‑driven tabletop game where Heroes enter corrupted “Delves” – pockets of reality overwritten by video‑game logic – and work together to debug the world.
@@ -61,4 +56,3 @@ This repo is used by:
 - AI coding tools (Cursor, Kiro, etc.) building simulators and helpers.
 
 **Source of truth:** Update the Markdown specs in `design/` first, then reflect changes in JSON, tools, and printed materials.
-```
