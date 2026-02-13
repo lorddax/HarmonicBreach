@@ -1,31 +1,35 @@
-# Harmonic Breach: Resonance System
+# Harmonic Breach: Resonance System (Revised)
 
-This document defines the updated Resonance mechanics for Harmonic Breach. It replaces older numeric “+1/+2/+3 to thresholds” escalation with a single, unified system based on a **Resonance Deck** and a visible **Resonance Tableau**. The tableau itself functions as the “Resonance track” and as the early‑boss trigger.[file:14]
+This document defines the updated Resonance mechanics for Harmonic Breach. It replaces older numeric “+1/+2/+3 to thresholds” escalation with a single, unified system based on a **Resonance Deck** and a visible **Resonance Tableau**. The tableau itself functions as the “Resonance track” and as the default early‑boss trigger.
 
 ## 1. Design Intent (Context for Future Work)
 
 Resonance should:
-- Feel like corrupted game logic accumulating in the Delve, not just a difficulty number.[file:14]
+- Feel like corrupted game logic accumulating in the Delve, not just a difficulty number.
 - Be **visible** on the table so players can read how close they are to disaster.
-- Interact with the existing **tag‑based, 4‑tier outcome system** instead of raw numeric thresholds.[file:14]
+- Interact with the existing **tag‑based, 4‑tier outcome system** instead of raw numeric thresholds.
 - Give players **meaningful levers** to delay, accelerate, or shape escalation at a cost.
-- Avoid death spirals where a few bad failures make the game mathematically unwinnable.[file:14]
+- Avoid death spirals where a few bad failures make the game mathematically unwinnable.
 
-The system below is designed around those goals and around an earlier, well‑received prototype where players could see a “big bad” moving through a deck and decide when to push or pull; here, that feeling is captured via the tableau instead of physically cycling a 100‑card stack.
+The system below is designed around those goals and around an earlier prototype where players could see a “big bad” moving through a deck and decide when to push or pull; here, that feeling is captured via the tableau instead of physically cycling a large stack.
+
+By default, bosses are **session end‑gates**: thematically, they are anchors that must be confronted; mechanically, they mark the switch from "reaching the anchor" to "resolving the anchor," and their tiered outcomes primarily shape post‑session rewards and future Delve builds.
 
 ## 2. Core Concepts
 
 - **Resonance Deck**: A small deck of scenario‑specific escalation cards.
-- **Resonance Tableau**: A shared row of slots where Resonance cards are placed; its state (how many cards, and which are face‑up) *is* the current Resonance.
-- **Boss Card**: For each Delve, the boss defines how the Resonance Tableau behaves and when the boss appears.[file:14]
+- **Resonance Tableau**: A shared row of slots where Resonance cards are placed; its state (how many cards, which are face‑up, which tags are present) *is* the current Resonance.
+- **Boss Card**: For each Delve, the boss defines how the Resonance Tableau behaves, when the boss appears, and how the final 4‑tier boss outcome affects rewards and future Delves.
 
 There is no separate numeric Resonance marker. Players read stability directly from the tableau.
+
+By default, each Delve has a **single‑spawn anchor boss** that appears at most once per session. When the boss appears, play shifts from resolving the Delve deck toward resolving the anchor; when the boss Challenge is resolved at any tier, its outcome effects are applied and the session ends.
 
 ## 3. Resonance Deck
 
 ### 3.1 Composition
 
-The Resonance Deck is built per Delve from:[file:14]
+The Resonance Deck is built per Delve from:
 
 - **Base Resonance cards** (generic to all Delves).
 - **Theme Resonance cards** (e.g., Horror, Cyberpunk, Platformer).
@@ -37,17 +41,17 @@ Each Resonance card includes:
 
 - Tags (e.g., Horror, Technology, Threat, Boon).
 - Whether it enters the tableau **face‑up** or **face‑down** by default.
-- Whether it counts toward **boss trigger conditions** (Threat) or is primarily a beneficial/neutral effect (Boon/Neutral).
+- Whether it counts toward boss trigger conditions (Threat) or is primarily beneficial/neutral (Boon/Neutral).
 
 ### 3.2 When Resonance Cards Are Drawn
 
-During each **Resonance Phase**, before revealing the next Challenge:[file:14]
+During each **Resonance Phase**, before revealing the next Challenge:
 
 1. Draw the **top card** of the Resonance Deck.
 2. Resolve any **on‑reveal** effects.
 3. Unless the card says otherwise, place it into the **Resonance Tableau** following the normal placement rules (see below).
 
-Some cards may skip the tableau and resolve purely as Instants, but in general, resonance‑related effects should flow through the tableau to keep all escalation visible.
+Some cards may skip the tableau and resolve purely as Instants, but in general, resonance‑related effects should flow through the tableau to keep escalation visible.
 
 ## 4. Resonance Tableau
 
@@ -55,13 +59,14 @@ The Resonance Tableau is a shared row of slots that shows the current corruption
 
 ### 4.1 Structure
 
-The **Boss card** defines the tableau profile for that Delve:[file:14]
-
+The **Boss card** defines the tableau profile for that Delve:
 - `max_slots` (e.g., 3–5).
 - Which tags or card types matter for boss triggers (e.g., Threat, Horror, Technology).
 - Any special rules for face‑down cards (e.g., “face‑down cards do not count for triggers”).
 
 Example: A boss might specify `max_slots = 4` and “Boss spawns when 3 or more face‑up Threat cards are present in the tableau.”
+
+Most Delves should use 3–4 slots as a baseline; 5‑slot tableaus are reserved for advanced scenarios or lower player counts to keep cognitive load manageable.
 
 ### 4.2 Card States
 
@@ -78,12 +83,16 @@ Cards have two states:
   - Occupies a slot.  
   - Does **not** contribute tags to boss triggers, unless a card or boss text says otherwise.
 
+Design note: To avoid "locked" tableaus that feel inert, bosses or Resonance cards may define overflow or flip rules that occasionally turn face‑down cards face‑up or clear them, ensuring the tableau continues to evolve rather than stalling.
+
 ### 4.3 Card Entry
 
 - By default, Resonance cards enter **face‑up** into the leftmost empty slot.
 - Cards with “enter face‑down” explicitly override this.
 - If all slots are full when a card would enter:
-  - Apply any **on‑overflow** rule from the boss (e.g., immediate boss spawn; discard oldest card; force flips).
+  - Apply any **on‑overflow** rule from the boss (e.g., immediate boss spawn; discard oldest card; flip one or more face‑down cards face‑up).
+
+Overflow behavior is a primary tool for preventing tableau bloat or stale states; bosses are encouraged to define simple, visible overflow rules such as "spawn the boss immediately" or "flip the oldest face‑down card face‑up, then spawn the boss."
 
 ### 4.4 Reading Resonance
 
@@ -95,13 +104,23 @@ Players assess current Resonance by:
 
 Different bosses care about different patterns, but the rules for reading the tableau are always the same.
 
-This is intentionally replacing the previous “Resonance levels modify thresholds” system; difficulty is now expressed via visible cards and tags, not hidden math.[file:14]
+This intentionally replaces the previous “Resonance levels modify thresholds” system; difficulty is expressed via visible cards and tags, not hidden math.
 
 ## 5. Boss Triggers and Effects
 
-### 5.1 Boss Triggers
+### 5.1 Default Boss Pattern: Single‑Spawn Anchor
 
-Each boss defines one or more conditions that cause it to appear as the next Challenge. Examples:[file:14]
+By default, each Delve has a **single‑spawn anchor boss** that appears at most once.
+
+- The boss is the moment the session shifts from "travel toward the anchor" to "deal with the anchor before it deals with us."
+- When the boss spawns, it becomes the next Challenge.
+- When that boss Challenge is resolved (at any tier), apply its boss‑specific outcome effects and end the session.
+
+Normal Delve deck Challenges do not resume after the boss unless the boss card explicitly defines a multi‑phase or return pattern (advanced design space).
+
+### 5.2 Boss Triggers
+
+Each boss defines one or more conditions that cause it to appear as the next Challenge. Examples:
 
 - **Full Tableau Trigger**  
   “When all slots are occupied, spawn the boss.”
@@ -114,14 +133,60 @@ Each boss defines one or more conditions that cause it to appear as the next Cha
 
 Triggers are checked at the **end of the Resolution Phase**, after tier outcomes and any flips/purges for that round.
 
-### 5.2 Early and Late Boss
+### 5.3 Early and Late Boss States
 
-- Spawning the boss **early** (few cards / low Threat density) should generally provide a small tactical advantage (e.g., fewer stacked Resonance effects, weaker boss state).
-- Spawning the boss **late** (full tableau, many Threat tags) can grant the boss additional powers or harsher failure tiers.
+On spawn, the boss reads the current tableau and locks in an **Early** or **Late** state (and optionally a specific mode such as "Threat‑heavy" or "Horror‑loaded").
 
-These modifications are written directly on the boss card (e.g., “If the tableau was full when I spawned, all my failures increase Resonance or discard extra cards”), keeping the logic local.[file:14]
+- Spawning the boss **early** (few cards / low Threat density) should provide a small tactical advantage (e.g., fewer stacked Resonance effects, weaker boss state, mild on‑spawn benefit for heroes).
+- Spawning the boss **late** (full tableau, many Threat tags) can grant the boss additional powers or harsher failure tiers (e.g., extra discards on Low/High Fail, extra Resonance added, more severe campaign fallout).
 
-This preserves the earlier “visible boss approaching” idea from the 100‑card deck prototype, but via a small, manageable structure.
+These modifications are written directly on the boss card (e.g., “If the tableau was full when I spawned, all my failures increase Resonance or discard extra cards”), keyed to tableau state at the moment of spawn (for example, "If the tableau was full when I spawned, all my Low Fail and High Fail outcomes also force each Hero to discard 1 card.").
+
+### 5.4 Boss Tier Outcomes as Session End‑Gates
+
+Boss Challenges use the same 4‑tier outcome system as other Challenges, but their outcomes primarily shape **post‑session reward exchange** and future Delve builds rather than short‑term tempo.
+
+For clarity, we can distinguish:
+
+- **Silencing outcomes**: Strong Success, Success.
+- **Breach outcomes**: Low Fail, High Fail.
+
+A recommended default pattern:
+
+- **Strong Success (Silence: Optimal)**  
+  - The Delve is fully "won."  
+  - Grants the best exchange rate for post‑session rewards (e.g., converting Delve gains into notes or other currency).  
+  - Additionally allows the team to **cash out the Resonance Tableau**: remaining Resonance (or a function of occupancy/tags) may be converted into extra notes or special rewards.
+
+- **Success (Silence: Costly but Clean)**  
+  - The Delve is "won."  
+  - Improves the post‑session exchange rate compared to baseline, but the tableau cannot be monetized; remaining Resonance dissipates or leaves a minor mark.
+
+- **Low Fail (Breach: Local Fallout)**  
+  - The heroes survive and the session ends, but the anchor's influence bleeds forward.  
+  - Exchange rate is baseline or slightly worsened.  
+  - The next Delve's build is penalized in a specific way (for example, seeding a particular Resonance card into the next Delve's deck, or imposing a small build constraint like an extra Threat card).
+
+- **High Fail (Breach: Lasting Scar)**  
+  - The Delve is lost.  
+  - No beneficial exchange; players may lose some accumulated rewards or potential notes.  
+  - All **future** Delve builds in this campaign path are affected, usually by adding persistent corruption (e.g., an extra Threat Resonance card to all future decks, global negative tags, or a permanent condition bosses can exploit).
+
+### 5.5 Silence and Breach Tokens (Campaign Hook)
+
+Boss outcomes may also create **Silence** and **Breach** tokens that live in the campaign‑level **HQ deckbox** (defined in the campaign/progression rules):
+
+- **Silence tokens**  
+  - Generated by silencing outcomes (Strong Success, Success).  
+  - During post‑session, a Silence token is added for free to the HQ deckbox.  
+  - HQ can later spend or reference these tokens to unlock upgrades, mitigate future Resonance, or buy reward‑pool cards (details in campaign rules).
+
+- **Breach tokens**  
+  - Generated by breach outcomes (Low Fail, High Fail).  
+  - During post‑session rewards, a Breach token is among the items drawn from the reward pool.  
+  - Players may spend notes to avoid adding that Breach to HQ; if they do not, it is added to the HQ deckbox and becomes a lasting campaign scar that can affect future Delves.
+
+Resonance itself does not track these tokens; they are a consequence layer attached to boss tier outcomes and handled by the HQ/campaign system.
 
 ## 6. Player Interaction and Agency
 
@@ -146,13 +211,12 @@ Individual Resonance or Avatar cards can add more specific ways to move, swap, c
 
 ### 6.2 Costs and Drive Types
 
-To prevent any single Drive type from becoming strictly superior (a noted concern in earlier evaluations), costs are spread deliberately:[file:14]
-
+To prevent any single Drive type from becoming strictly superior (a noted concern in earlier evaluations), costs are spread deliberately:
 - Purge usually costs **opportunity** (forgoing some reward) instead of Drive.
 - Quarantine typically costs **Body + Agility** (physical stabilization) or mixed resources.
 - Some advanced effects may cost **Mind** (debugging the underlying logic).
 
-Campaign progression can unlock stronger Resonance management tools, but costs should remain meaningful to preserve tension.
+During boss fights, these same tools remain available, but the stakes are higher: choosing to spend resources managing Resonance competes directly with spending them to defeat the boss itself. Campaign progression can unlock stronger Resonance management tools, but costs should remain meaningful to preserve tension.
 
 ## 7. Resonance Cards: Behavior
 
@@ -177,7 +241,7 @@ Examples (for design reference, not final text):
 - “On reveal: each Hero discards 1 card; then place this card face‑down in the tableau.”
 - “Trigger: when the team achieves Strong Success on a Logic Challenge, flip this card face‑down.”
 
-All effects are expressed in terms of **tags, tiers, and card states**, not raw numeric threshold modifiers.[file:14]
+All effects are expressed in terms of **tags, tiers, and card states**, not raw numeric threshold modifiers. To reduce cognitive load, each Resonance card should focus on a single clear ongoing effect plus at most one hook (such as a Strong Success or High Fail interaction).
 
 ## 8. Example Boss and Resonance Cards
 
@@ -195,7 +259,7 @@ These examples are for flavor and patterns; exact numbers will be tuned later.
 - **Late Spawn Penalty**
   - If the tableau was **full** when the boss spawned, all of the boss’s Low Fail and High Fail outcomes also force each Hero to discard 1 card.
 
-This keeps the original “global corruptor” feel but ties it to visible Threat cards instead of hidden numeric thresholds.[file:14]
+This keeps the “global corruptor” feel but ties it to visible Threat cards instead of hidden numeric thresholds; the boss's tier table would then follow the Strong Success / Success / Low Fail / High Fail pattern for end‑of‑session consequences, Silence/Breach token generation, and exchange rates described above.
 
 ### 8.2 Example Resonance Cards
 
@@ -216,12 +280,11 @@ This keeps the original “global corruptor” feel but ties it to visible Threa
 - Boss Interaction: This card always counts as **Threat** for boss triggers, even if flipped face‑down.  
 - Purge Bonus: If this card is purged via Strong Success, the team may treat that Challenge as Strong Success for campaign reward purposes even if it was only Success.
 
-These examples show how beneficial cards can still accelerate the boss, preserving interesting tradeoffs.
+These examples show how beneficial cards can still accelerate the boss, preserving interesting tradeoffs between short‑term advantages and long‑term risk.
 
 ## 9. Tooling and JSON Notes
 
-For structured representations (GameGrammar, simulators, etc.), each Resonance card should include at least:[file:14]
-
+For structured representations (GameGrammar, simulators, etc.), each Resonance card should include at least:
 - `card_type`: resonance  
 - `source`: base | theme | poi  
 - `default_state`: face_up | face_down  
@@ -233,6 +296,11 @@ Each boss should define:
 
 - `resonance_max_slots`  
 - `resonance_trigger_condition`: structured description of when the boss spawns (using counts of tags, face‑up/face‑down state, and/or occupancy)  
-- `early_spawn_effects` / `late_spawn_effects` keyed to tableau state
+- `early_spawn_effects` / `late_spawn_effects` keyed to tableau state  
+- A 4‑tier outcome table whose entries may reference:  
+  - Post‑session exchange rates.  
+  - Optional conversion of the Resonance Tableau into rewards on Strong Success.  
+  - Campaign‑level effects on the next Delve build or all future Delves.  
+  - Creation of Silence/Breach tokens and any immediate consequences tied to them.
 
-This keeps the Resonance system fully aligned with the existing tag + tier framework in `core_rules.md`, removes old numeric threshold scaling, and keeps all escalation logic in one visible, manipulable subsystem for both players and tools.[file:14]
+This keeps the Resonance system fully aligned with the existing tag + tier framework in `core_rules.md`, removes old numeric threshold scaling, and keeps all escalation logic in one visible, manipulable subsystem for both players and tools.
