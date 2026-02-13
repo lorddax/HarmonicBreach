@@ -1,0 +1,714 @@
+{
+  "title": "Harmonic Breach: Delve Protocol",
+  "tagline": "When reality glitches, Heroes debug the world",
+  "fun_rating": 8,
+  "summary": "Modern Earth where video game popularity has reached critical mass, creating 'Imprints' - resonance patterns that eventually manifest as physical 'Delves' where game logic overwrites reality. These pocket dimensions threaten to expand and corrupt baseline reality permanently unless specialized Heroes can enter them and restore harmonic balance. Each Delve reflects the genre and mechanics of whatever games created the original Imprint, leading to bizarre fusion spaces where fantasy dungeons might contain cyberpunk security systems, or horror mansions might have platformer physics.",
+  "goals": "Penetrate the Delve's layers of corrupted game logic, locate the reality Anchor at its core, and perform the Silencing ritual to collapse the pocket dimension back into normal space-time before it reaches Stage 5 resonance and begins permanently overwriting baseline reality.",
+  "victory_conditions": "Heroes win collectively by successfully completing enough Challenge thresholds to reduce the Delve's Resonance to zero, representing the successful disruption of the harmful frequency pattern. Individual victory is impossible - either the entire team succeeds in restoring harmonic balance, or they all fail as reality becomes permanently corrupted by the runaway Imprint.",
+  "complexity": "Medium",
+  "player_count": "4-4",
+  "play_time": "45-60 minutes",
+  "primary_mechanisms": [
+    "Card Driven",
+    "Cooperative",
+    "Hand Management"
+  ],
+  "secondary_mechanisms": [
+    "Resource Management",
+    "Programmed Actions",
+    "Variable Player Powers"
+  ],
+  "critique": {
+    "balance": {
+      "issues": [
+        {
+          "title": "Challenge thresholds don't scale with player count",
+          "severity": "High",
+          "description": "",
+          "recommendation": "Implement dynamic threshold scaling: 2 players = 70% threshold, 3 players = 85% threshold, 4 players = 100% threshold"
+        },
+        {
+          "title": "Mind Drive appears significantly more powerful than Body/Agility Drive",
+          "severity": "Medium",
+          "description": "",
+          "recommendation": "Rebalance card costs or add more powerful Body/Agility cards to create resource parity"
+        },
+        {
+          "title": "Resonance escalation lacks clear mathematical progression",
+          "severity": "Medium",
+          "description": "",
+          "recommendation": "Define specific escalation rates: Level 1 = +1 card per round, Level 2 = +2 cards, etc."
+        },
+        {
+          "title": "Avatar generation rates create significant power imbalances",
+          "severity": "Medium",
+          "description": "",
+          "recommendation": "Ensure all Avatars generate 6 total Drive per refresh, redistributed across types for specialization"
+        },
+        {
+          "title": "Combo cards like Genre Bleed Phenomenon heavily favor higher player counts",
+          "severity": "Low",
+          "description": "",
+          "recommendation": "Add minimum effect floors for player-scaling cards to maintain viability at 2 players"
+        }
+      ],
+      "overall_rating": "The game has solid cooperative mechanics with meaningful resource constraints, but suffers from scaling issues across player counts and potential Drive type imbalances. The face-down contribution system creates good tension, but fixed challenge thresholds may make the game unwinnable at low player counts or trivial at high player counts."
+    },
+    "fun": {
+      "rating": 8,
+      "engagement_hooks": [
+        "Face-down card contributions create suspense until simultaneous reveal",
+        "Cross-genre combinations produce surprising and flavorful results",
+        "Escalating difficulty creates mounting pressure and higher stakes",
+        "Cooperative coordination without perfect information requires communication and trust"
+      ],
+      "tension_sources": [
+        "Escalating Delve Deck makes each round more dangerous",
+        "Limited Drive tokens force difficult resource allocation decisions",
+        "Face-down contributions create uncertainty about team success until reveal",
+        "Binary team victory/defeat means individual failures affect everyone"
+      ],
+      "replayability": "High",
+      "replayability_reason": "Perfect combo reveal where multiple cross-genre cards combine for massive threshold success, Narrow failure leading to Resonance spike that changes team strategy, Hero sacrificing powerful Exhaust card to prevent team defeat, Final challenge resolution determining whether reality is saved or corrupted",
+      "target_audience": "Players have strong control over card play, resource allocation, and tactical coordination. However, the cooperative nature and escalating Delve responses somewhat limit individual impact on outcomes."
+    }
+  },
+  "turn_structure": {
+    "phases": [
+      {
+        "name": "Resonance Phase",
+        "description": "The Delve automatically escalates its reality distortion, drawing cards from the Delve Deck based on current Resonance level. As the pocket dimension grows stronger, it actively fights back against the Heroes' presence with increasingly dangerous and unpredictable manifestations.",
+        "player_actions": [
+          "Observe new Delve cards revealed",
+          "React to immediate environmental changes",
+          "Discuss tactical responses with team",
+          "Use 'Interrupt' tagged cards to counter specific Delve effects",
+          "Activate Avatar persistent abilities that trigger on Delve escalation",
+          "Trade or redistribute Drive tokens before facing the new Challenge"
+        ],
+        "decisions": [
+          "Whether to spend precious Drive on Interrupt cards to prevent escalation",
+          "How to reposition team members for optimal Challenge contribution",
+          "Which Avatar abilities to activate now vs. save for the Challenge Phase",
+          "Whether to use limited Clue tokens to peek at upcoming Delve cards"
+        ],
+        "triggers": "Automatic at start of each round, escalation rate increases with Resonance level",
+        "interacts_with": [
+          "Challenge Phase setup",
+          "Delve Deck escalation rules",
+          "Avatar interrupt abilities",
+          "Drive economy management"
+        ]
+      },
+      {
+        "name": "Challenge Phase",
+        "description": "Heroes face the active Challenge by secretly contributing cards that provide the required Tags to meet threshold values. Players must coordinate their limited Drive resources while managing the uncertainty of face-down contributions to overcome the reality distortion.",
+        "player_actions": [
+          "Play cards face-down to contribute specific Tags",
+          "Spend Drive tokens to activate played cards",
+          "Combine cards for synergy bonuses",
+          "Use Avatar special abilities",
+          "Coordinate with teammates about Tag contributions without revealing specific cards",
+          "Trigger 'Combo' effects when multiple genre cards share Tags",
+          "Activate exhaust cards for powerful one-time effects"
+        ],
+        "decisions": [
+          "Which cards to contribute vs. hold for future challenges or emergencies",
+          "How much Drive to spend this round vs. conserve for sustainability",
+          "Whether to trigger powerful Avatar abilities that may have long cooldowns",
+          "Coordinating tag contributions without giving away exact card values to maintain suspense",
+          "Risk assessment for playing powerful Exhaust cards that are lost forever",
+          "Whether to play safe with guaranteed threshold meeting or gamble on combo bonuses"
+        ],
+        "triggers": "Begins immediately after Resonance Phase escalation",
+        "interacts_with": [
+          "Drive token economy",
+          "Card synergy system",
+          "Face-down information uncertainty",
+          "Cooperative threshold mechanics"
+        ]
+      },
+      {
+        "name": "Resolution Phase",
+        "description": "All contributed cards are revealed simultaneously and Tag values are calculated to determine success or failure. The outcome immediately affects Delve Resonance, Hero resources, and team positioning for future challenges.",
+        "player_actions": [
+          "Reveal contributed cards simultaneously",
+          "Calculate total tag values with any combo bonuses",
+          "Apply success or failure effects to Delve Resonance",
+          "Draw reward cards if earned",
+          "Resolve any 'On Success' or 'On Failure' card triggers",
+          "Distribute any shared rewards among team members",
+          "Move spent cards to appropriate discard piles"
+        ],
+        "decisions": [
+          "How to distribute limited success rewards (cards, Clue tokens) among team members",
+          "Which Heroes should benefit from 'choose a Hero' effects for optimal positioning",
+          "Whether to trigger optional 'success spending' abilities that cost resources but provide benefits",
+          "Strategic decisions about which failure consequences to assign to which Heroes if multiple penalties occur"
+        ],
+        "triggers": "After all Heroes have committed to their Challenge contributions",
+        "interacts_with": [
+          "Delve escalation consequences",
+          "Hero progression rewards",
+          "Resource distribution",
+          "Failure cascade effects"
+        ]
+      },
+      {
+        "name": "Refresh Phase",
+        "description": "Heroes restore their Drive tokens according to Avatar type, draw new cards to hand limits, and prepare for the next reality breach escalation. This is also when certain sharing and preparation abilities can be activated.",
+        "player_actions": [
+          "Restore Drive tokens based on Avatar generation rates",
+          "Draw cards to hand limit from personal decks",
+          "Activate end-of-round Avatar abilities",
+          "Trade or share specific card types with teammates",
+          "Shuffle personal deck if it was exhausted",
+          "Spend accumulated Clue tokens for strategic advantages",
+          "Activate 'Persistent' Avatar abilities that last until next Refresh"
+        ],
+        "decisions": [
+          "Which Drive types to prioritize for restoration if Avatar allows choices",
+          "Whether to use optional card-sharing abilities vs. keep powerful cards",
+          "Strategic hand composition planning for anticipated next Challenge types",
+          "How to spend limited Clue tokens for maximum team benefit",
+          "Whether to activate Avatar abilities now or save them for emergency situations",
+          "Coordination about who should hold interrupt cards for next Resonance Phase"
+        ],
+        "triggers": "After Resolution Phase effects are fully applied",
+        "interacts_with": [
+          "Drive economy sustainability",
+          "Hand management strategy",
+          "Team resource distribution",
+          "Next round preparation"
+        ]
+      }
+    ],
+    "phase_flow": "Resonance → Challenge → Resolution → Refresh, repeating until Delve is Silenced or reaches critical Resonance",
+    "sample_turn": "The team enters Round 3 of the 'Abandoned Arcade Horror Delve' with Resonance at Level 2. **Resonance Phase**: The GM reveals 'Possessed Cabinet Cluster' from the Delve Deck - a Challenge requiring 12 [Technology] and 6 [Combat] to overcome. The Scout uses her persistent ability to peek at the next Delve card, revealing even worse challenges ahead. **Challenge Phase**: The team coordinates their approach. The Technomancer plays 'Viral Mythology Spreader' (3 [Technology], 1 [Logic]) for 2 Mind Drive, announcing it will boost other tech cards. The Warrior contributes 'Quantum Norse Hammer' (4 [Combat], 2 [Technology]) for 2 Body + 1 Mind Drive, hoping someone else has Norse/Quantum synergy. The Scout adds 'Cybernetic Reflexes' (3 [Agility], 1 [Technology]) for 1 Body Drive, and the Mystic plays 'Hacked Runes' (2 [Logic], 3 [Technology]) for 1 Mind + 1 Agility Drive. **Resolution Phase**: Cards are revealed simultaneously! The Viral Spreader boosts all other tech cards' secondary Tags by +1, so the team's total becomes: 3+2+1+3=9 [Technology] plus bonuses, and 4 [Combat]. The +1 bonus from Viral Spreader pushes their [Technology] total to 10, but they're still 2 short of the 12 needed and 2 short on [Combat]. The challenge fails! Resonance increases to Level 3, and each Hero must discard one card. **Refresh Phase**: Heroes restore Drive (Technomancer gains 1 Body, 3 Mind, 2 Agility), draw back to hand limit, and prepare for an even more dangerous Round 4 with higher escalation rates. The team realizes they need better coordination and perhaps some Exhaust cards to handle the increasing difficulty.",
+    "actions_per_turn": "Players contribute cards cooperatively during Challenge Phase, spending Drive tokens to activate card abilities and meet tag thresholds",
+    "round_structure": null
+  },
+  "components": {
+    "board": {
+      "description": "Central play area with zones for active Challenge, Delve state tracking, shared contribution pool, and individual Hero areas. Resonance track shows current Delve danger level (0-5).",
+      "size": "Standard"
+    },
+    "cards": [
+      {
+        "deck_name": "Avatar Cards",
+        "count": 20,
+        "size": "Poker size (2.5x3.5 inches)",
+        "card_types": [
+          "Warrior",
+          "Mystic",
+          "Scout",
+          "Technomancer",
+          "Detective"
+        ],
+        "examples": [
+          {
+            "card_name": "Norse Berserker",
+            "card_type": "Warrior",
+            "effect_text": "Generate 3 Body, 1 Mind, 2 Agility Drive per Refresh. Exhaust: Ignore one Challenge failure this round.",
+            "cost": null,
+            "strategic_role": "High Body Drive generation for combat-heavy challenges with emergency failure prevention ability"
+          },
+          {
+            "card_name": "Quantum Mystic",
+            "card_type": "Mystic",
+            "effect_text": "Generate 1 Body, 3 Mind, 2 Agility Drive per Refresh. Persistent: May look at top Delve card before Resonance Phase.",
+            "cost": null,
+            "strategic_role": "High Mind Drive with information gathering to help team prepare for upcoming challenges"
+          },
+          {
+            "card_name": "Digital Scout",
+            "card_type": "Scout",
+            "effect_text": "Generate 2 Body, 2 Mind, 3 Agility Drive per Refresh. Trade 1 Agility for 1 of any Drive type during Refresh.",
+            "cost": null,
+            "strategic_role": "Balanced Drive generation with resource conversion flexibility for team support"
+          },
+          {
+            "card_name": "Quantum Norse Hammer",
+            "card_type": "Hybrid",
+            "effect_text": "4 [Combat], 2 [Technology]. Combo: If another [Norse] or [Quantum] tagged card is played this Challenge, gain +2 [Combat].",
+            "cost": "2 Body + 1 Mind Drive",
+            "strategic_role": "High-impact combat card that rewards genre-mixing strategies, potentially providing 6 Combat for teams building around Norse-tech fusion"
+          },
+          {
+            "card_name": "Viral Mythology Spreader",
+            "card_type": "Technology",
+            "effect_text": "3 [Technology], 1 [Logic]. When played: All other [Technology] cards this Challenge gain +1 to their secondary Tags.",
+            "cost": "2 Mind Drive",
+            "strategic_role": "Combo enabler that amplifies tech-heavy team compositions, turning moderate contributions into threshold-smashing combinations"
+          },
+          {
+            "card_name": "Reality Debugging Protocol",
+            "card_type": "Logic",
+            "effect_text": "2 [Logic], 2 [Perception]. Exhaust: If this Challenge fails, reduce failure consequences by half (rounded up).",
+            "cost": "3 Mind Drive",
+            "strategic_role": "Expensive safety net for critical moments, representing the Heroes' ultimate debugging technique when reality corruption becomes overwhelming"
+          },
+          {
+            "card_name": "Genre Bleed Phenomenon",
+            "card_type": "Hybrid",
+            "effect_text": "1 [Combat], 1 [Technology], 1 [Agility], 1 [Logic]. Copy one Tag from each other card played this Challenge.",
+            "cost": "1 Body + 1 Mind + 1 Agility Drive",
+            "strategic_role": "Ultimate flexibility card that becomes more powerful with more teammates contributing, representing reality's instability working in Heroes' favor"
+          },
+          {
+            "card_name": "Platformer Physics Exploit",
+            "card_type": "Agility",
+            "effect_text": "5 [Agility]. If Delve Resonance is 2+, may spend 1 additional Agility Drive to grant all Heroes +1 [Agility] this Challenge.",
+            "cost": "2 Agility Drive",
+            "strategic_role": "Powerful agility provider that becomes a team buff in dangerous high-Resonance situations, representing exploiting game physics"
+          },
+          {
+            "card_name": "Boss Battle Preparation",
+            "card_type": "Hybrid",
+            "effect_text": "2 [Combat], 2 [Perception]. Persistent: Until next Refresh, all Heroes' first card each Challenge costs 1 less Drive.",
+            "cost": "2 Body + 1 Mind Drive",
+            "strategic_role": "Late-game economy card that provides lasting team benefits, representing Heroes learning the Delve's patterns and optimizing their approach"
+          }
+        ]
+      },
+      {
+        "deck_name": "Hero Action Cards",
+        "count": 200,
+        "size": "Poker size (2.5x3.5 inches)",
+        "card_types": [
+          "Combat",
+          "Technology",
+          "Perception",
+          "Logic",
+          "Agility",
+          "Hybrid"
+        ],
+        "examples": [
+          {
+            "card_name": "Norse Parkour",
+            "card_type": "Hybrid",
+            "effect_text": "3 [Agility], 1 [Combat]. If activated with 2+ Agility Drive, gain +1 [Agility] this Challenge.",
+            "cost": "2 Agility Drive",
+            "strategic_role": "Efficient Agility contribution with bonus potential for movement-based challenges in fantasy-sport fusion Delves"
+          },
+          {
+            "card_name": "Hacked Runes",
+            "card_type": "Hybrid",
+            "effect_text": "2 [Logic], 3 [Technology]. Exhaust: Copy one [Technology] tag from another card played this Challenge.",
+            "cost": "1 Mind + 1 Agility Drive",
+            "strategic_role": "Tech-magic fusion for complex puzzles, with powerful one-time duplication effect for critical thresholds"
+          },
+          {
+            "card_name": "Cybernetic Reflexes",
+            "card_type": "Technology",
+            "effect_text": "3 [Agility], 1 [Technology]. If Delve Resonance is 3+, gain +1 [Perception].",
+            "cost": "1 Body Drive",
+            "strategic_role": "Body-efficient agility boost that becomes more powerful as Delve danger increases"
+          },
+          {
+            "card_name": "Forensic Analysis",
+            "card_type": "Logic",
+            "effect_text": "3 [Perception], 2 [Logic]. Draw 1 card if this Challenge succeeds.",
+            "cost": "2 Mind Drive",
+            "strategic_role": "Investigation powerhouse that rewards success with card advantage for detective-themed gameplay"
+          }
+        ]
+      },
+      {
+        "deck_name": "Challenge Cards",
+        "count": 60,
+        "size": "Poker size (2.5x3.5 inches)",
+        "card_types": [
+          "Environmental",
+          "Enemy",
+          "Puzzle",
+          "Boss"
+        ],
+        "examples": [
+          {
+            "card_name": "Glitched Corridor",
+            "card_type": "Environmental",
+            "effect_text": "Threshold: 10 [Perception]. Success: Gain 1 Clue card, reduce Resonance by 1. Failure: Each Hero discards 1 card.",
+            "cost": null,
+            "strategic_role": "Standard perception challenge with minor rewards and penalties, good for testing team coordination"
+          },
+          {
+            "card_name": "Viral Security Daemon",
+            "card_type": "Enemy",
+            "effect_text": "Threshold: 8 [Technology], 6 [Combat]. Success: Reduce Resonance by 2. Failure: Resonance increases by 1, all Tech cards cost +1 Drive next round.",
+            "cost": null,
+            "strategic_role": "High-stakes tech-combat hybrid requiring significant team investment with harsh failure consequences"
+          },
+          {
+            "card_name": "Quantum Logic Gate",
+            "card_type": "Puzzle",
+            "effect_text": "Threshold: 12 [Logic], 4 [Technology]. Success: Each Hero draws 2 cards. Failure: Remove this Challenge, add 2 random Challenges to Delve Deck.",
+            "cost": null,
+            "strategic_role": "High-reward puzzle that punishes failure by escalating future difficulty significantly"
+          }
+        ]
+      },
+      {
+        "deck_name": "Point of Interest Cards",
+        "count": 30,
+        "size": "Poker size (2.5x3.5 inches)",
+        "card_types": [
+          "Library",
+          "Hospital",
+          "Mall",
+          "School",
+          "Office"
+        ],
+        "examples": [
+          {
+            "card_name": "Abandoned Library",
+            "card_type": "Library",
+            "effect_text": "Setup: Add 3 [Logic] Challenges to Delve Deck. Heroes start with +1 card in hand. Final Challenge requires 15 [Logic] total.",
+            "cost": null,
+            "strategic_role": "Knowledge-focused location that rewards Logic builds with extra starting resources but demands strong puzzle-solving"
+          },
+          {
+            "card_name": "Shopping Mall",
+            "card_type": "Mall",
+            "effect_text": "Setup: Add 2 [Agility], 1 [Perception] Challenge to Delve Deck. During Refresh, Heroes may trade 2 discarded cards for 1 new card.",
+            "cost": null,
+            "strategic_role": "Movement-focused location with resource recycling mechanics for sustained expeditions"
+          }
+        ]
+      },
+      {
+        "deck_name": "Delve Theme Cards",
+        "count": 40,
+        "size": "Poker size (2.5x3.5 inches)",
+        "card_types": [
+          "Horror",
+          "Sci-Fi",
+          "Fantasy",
+          "Cyberpunk",
+          "Survival"
+        ],
+        "examples": [
+          {
+            "card_name": "Survival Horror Imprint",
+            "card_type": "Horror",
+            "effect_text": "All Challenges gain +2 threshold. Heroes restore 1 less Drive per Refresh. Add 'Fear' tag to all failed Challenges.",
+            "cost": null,
+            "strategic_role": "Difficulty amplifier that creates resource scarcity and psychological pressure for horror atmosphere"
+          },
+          {
+            "card_name": "Cyberpunk Imprint",
+            "card_type": "Cyberpunk",
+            "effect_text": "All [Technology] cards cost 1 less Drive. Add 3 'Hack' tagged Challenges to Delve Deck.",
+            "cost": null,
+            "strategic_role": "Technology-focused modifier that rewards tech builds while adding hacking-specific obstacles"
+          }
+        ]
+      }
+    ],
+    "tokens": [
+      {
+        "name": "Body Drive Tokens",
+        "quantity": 60
+      },
+      {
+        "name": "Mind Drive Tokens",
+        "quantity": 60
+      },
+      {
+        "name": "Agility Drive Tokens",
+        "quantity": 60
+      },
+      {
+        "name": "Resonance Markers",
+        "quantity": 10
+      }
+    ],
+    "dice": []
+  },
+  "setup": "Each Hero selects an Avatar card and builds a 30-card Action deck from their Avatar's pool. GM selects 1 POI card and 1-2 Theme cards, then builds a Delve deck by combining the POI's required Challenges with Theme-modified cards. Place Resonance marker at Stage 1. Heroes start with Drive tokens equal to their Avatar's generation values and draw opening hands.",
+  "agency_justification": "Players have complete control over which cards to play, how much Drive to spend, and how to coordinate contributions. Success depends on tactical card selection and team coordination, not random dice rolls.",
+  "theme_integration": "The card-driven mechanics directly represent how game logic has overridden physical law within the Delve. Players aren't rolling dice because dice don't exist here - they're playing cards because they're literally inside a card game's rule system. The cooperative threshold system represents multiple Heroes working together to generate enough 'counter-resonance' to overcome the Imprint's influence. The Tag system shows how different game genres can bleed together in corrupted reality, allowing seemingly impossible combinations like 'Norse Cyberpunk' or 'Horror Platforming'. Drive tokens represent each Hero's limited capacity to impose their own game logic within the chaotic space, while the escalating Delve Deck shows the Imprint growing stronger and more unstable over time.",
+  "core_loop": "Each turn: Resonance Phase → Challenge Phase → Resolution Phase → Refresh Phase",
+  "strategic_depth": "",
+  "mechanism_details": [
+    {
+      "mechanism_type": "card_driven",
+      "specific_rules": [
+        "All actions require playing cards - no separate dice or stats",
+        "Cards must have matching Tags to contribute to Challenge thresholds",
+        "Face-down contribution prevents opponents from knowing your exact strategy",
+        "Cross-genre cards can combine if they share at least one Tag",
+        "Avatar cards provide persistent abilities and Drive generation"
+      ],
+      "example_interaction": "The Challenge requires 8 [Agility] and 4 [Technology]. Player 1 plays a 'Norse Parkour' card (3 Agility) and 'Hacked Runes' card (2 Agility, 3 Technology), spending 2 Mind Drive to activate both. Player 2 adds 'Cybernetic Reflexes' (3 Agility, 1 Technology) for 1 Body Drive.",
+      "design_parameters": {
+        "hand_size": 7,
+        "cards_per_challenge": 3,
+        "tag_threshold_range": "4-12",
+        "drive_cost_per_card": "1-3"
+      }
+    },
+    {
+      "mechanism_type": "cooperative",
+      "specific_rules": [
+        "All Heroes must collectively meet Challenge thresholds to succeed",
+        "Players can share certain tagged cards during Refresh Phase",
+        "Failure affects entire team - individual success impossible",
+        "Team loses together if Delve reaches Stage 5 without Silencing"
+      ],
+      "example_interaction": "The team faces a 15 [Combat] threshold Challenge. No single Hero can contribute more than 6 Combat, so they must coordinate: Warrior contributes 5, Rogue adds 4, Mage provides 3, and Technomancer supplies 3 to barely succeed.",
+      "design_parameters": {
+        "max_individual_contribution": 8,
+        "typical_threshold_range": "10-20",
+        "shared_failure_consequences": true
+      }
+    },
+    {
+      "mechanism_type": "hand_management",
+      "specific_rules": [
+        "Heroes draw from personal decks built from Avatar pools",
+        "Spent cards go to discard, shuffle when deck empty",
+        "Some powerful cards have 'Exhaust' - remove from game after use",
+        "Drive tokens limit how many cards can be activated per round",
+        "Hand size varies by Avatar type (5-9 cards)"
+      ],
+      "example_interaction": "The Mystic has 7 cards in hand but only 4 total Drive tokens. She must choose which 2-3 cards to activate this round, saving her powerful 'Reality Tear' card (costs 3 Drive) for a more critical moment.",
+      "design_parameters": {
+        "base_hand_size": 7,
+        "max_drive_tokens": 12,
+        "exhaust_cards_per_deck": 3,
+        "cards_drawn_per_refresh": 2
+      }
+    }
+  ],
+  "component_specs": [
+    {
+      "component_type": "cards",
+      "quantity": 350,
+      "specifications": {
+        "size": "standard poker (2.5\" x 3.5\")",
+        "finish": "linen",
+        "categories": {
+          "Avatar": 20,
+          "Hero Actions": 200,
+          "Challenges": 60,
+          "POI": 30,
+          "Themes": 40
+        },
+        "special_features": "Color-coded by type, Tag symbols prominent"
+      }
+    },
+    {
+      "component_type": "tokens",
+      "quantity": 190,
+      "specifications": {
+        "denominations": {
+          "Body Drive": 60,
+          "Mind Drive": 60,
+          "Agility Drive": 60,
+          "Resonance": 10
+        },
+        "material": "thick cardboard",
+        "size": "15mm diameter",
+        "colors": {
+          "Body": "red",
+          "Mind": "blue",
+          "Agility": "green",
+          "Resonance": "black"
+        }
+      }
+    },
+    {
+      "component_type": "board",
+      "quantity": 1,
+      "specifications": {
+        "zones": [
+          "Active Challenge Area",
+          "Shared Contribution Pool",
+          "Delve Deck & Discard",
+          "Hero Play Areas (4)",
+          "Resonance Track (0-5)"
+        ],
+        "tracks": [
+          "Resonance Track"
+        ],
+        "size": "18\" x 24\"",
+        "material": "mounted game board"
+      }
+    }
+  ],
+  "scoring_formulas": [
+    {
+      "scoring_type": "end_game",
+      "formula": "Team victory if Resonance reaches 0 through successful Challenges. Team defeat if Resonance reaches 5.",
+      "example": "Heroes face 8 Challenges requiring 15 total successes to reduce Resonance from 4 to 0. Failing 3+ Challenges pushes Resonance to 5 = defeat.",
+      "max_potential": "Binary: Complete Success or Total Failure"
+    },
+    {
+      "scoring_type": "ongoing",
+      "formula": "Individual contribution tracked by cards played and Drive spent per Challenge",
+      "example": "In Challenge requiring 12 [Combat]: Warrior contributes 8 [Combat] for 3 Body Drive, Scout adds 4 [Combat] for 2 Agility Drive",
+      "max_potential": null
+    },
+    {
+      "scoring_type": "milestone",
+      "formula": "Clue tokens earned for successful investigation Challenges, spent for future advantages",
+      "example": "Team earns 3 Clue tokens from successful [Perception] Challenges. Spend 2 Clues to look at next 3 Delve cards.",
+      "max_potential": "8 Clue tokens maximum per session"
+    }
+  ],
+  "mechanism_synergies": [
+    "Face-down card contributions create tension with Drive limitations - players must commit Drive before seeing if they've contributed enough Tags, leading to nail-biting moments where teams aren't sure if they've met thresholds until the reveal",
+    "The three Drive types (Body/Mind/Agility) interact with genre-mixing to create meaningful resource decisions - a Norse Cyberpunk card requiring Body+Mind Drive forces players to balance physical and mental builds while rewarding genre fusion",
+    "Avatar abilities and hand management combine to create asymmetric cooperation - the Mystic's ability to preview Delve cards helps the team prepare, while the Scout's Drive conversion helps redistribute resources based on revealed Challenge needs",
+    "The escalating Delve Deck and cooperative thresholds create a tension curve where early challenges test teamwork basics while later challenges require near-perfect coordination and optimal card usage to overcome increasingly dangerous reality distortions",
+    "Exhaust cards and Drive restoration create a sustainability meta-game where teams must balance short-term power plays against long-term resource management, especially critical in longer Delves where card cycling becomes essential"
+  ],
+  "balance_parameters": {
+    "drive_generation_per_refresh": "6-8 tokens total per Avatar, distributed across 2-3 types",
+    "average_challenge_threshold": "8-15 total Tags required, scaling with Delve Resonance level",
+    "card_activation_costs": "1-3 Drive per card, with powerful effects costing 2+ and cross-type cards requiring mixed Drive",
+    "hand_size_limits": "5-7 cards depending on Avatar type, with Mystic at 7, Scout at 6, others at 5",
+    "delve_escalation_rate": "1 new Challenge card per Resonance Phase, 2 cards at Resonance 3+, 3 cards at Resonance 4+",
+    "exhaust_cards_per_deck": "3-4 powerful one-time cards per 30-card deck",
+    "combo_bonus_threshold": "2+ matching genre/tag cards = +1 to primary Tag, 3+ cards = +2 bonus",
+    "resonance_reduction_per_success": "1 point for standard Challenges, 2 points for Boss-type Challenges",
+    "failure_escalation": "+1 Resonance per failed Challenge, additional penalties vary by Challenge type",
+    "clue_token_economy": "1 Clue per successful [Perception] Challenge, spend 2 Clues to preview 3 Delve cards or gain 2 Drive of any type"
+  },
+  "sample_turn_detailed": "The team enters Round 3 of the 'Abandoned Arcade Horror Delve' with Resonance at Level 2. **Resonance Phase**: The GM reveals 'Possessed Cabinet Cluster' from the Delve Deck - a Challenge requiring 12 [Technology] and 6 [Combat] to overcome. The Scout uses her persistent ability to peek at the next Delve card, revealing even worse challenges ahead. **Challenge Phase**: The team coordinates their approach. The Technomancer plays 'Viral Mythology Spreader' (3 [Technology], 1 [Logic]) for 2 Mind Drive, announcing it will boost other tech cards. The Warrior contributes 'Quantum Norse Hammer' (4 [Combat], 2 [Technology]) for 2 Body + 1 Mind Drive, hoping someone else has Norse/Quantum synergy. The Scout adds 'Cybernetic Reflexes' (3 [Agility], 1 [Technology]) for 1 Body Drive, and the Mystic plays 'Hacked Runes' (2 [Logic], 3 [Technology]) for 1 Mind + 1 Agility Drive. **Resolution Phase**: Cards are revealed simultaneously! The Viral Spreader boosts all other tech cards' secondary Tags by +1, so the team's total becomes: 3+2+1+3=9 [Technology] plus bonuses, and 4 [Combat]. The +1 bonus from Viral Spreader pushes their [Technology] total to 10, but they're still 2 short of the 12 needed and 2 short on [Combat]. The challenge fails! Resonance increases to Level 3, and each Hero must discard one card. **Refresh Phase**: Heroes restore Drive (Technomancer gains 1 Body, 3 Mind, 2 Agility), draw back to hand limit, and prepare for an even more dangerous Round 4 with higher escalation rates. The team realizes they need better coordination and perhaps some Exhaust cards to handle the increasing difficulty.",
+  "_design_evaluation": {
+    "fun_rating": 8,
+    "dimensions": {
+      "strategic_depth": {
+        "score": 8,
+        "rationale": "Multiple interconnected decision layers: card selection, Drive allocation, timing of powerful abilities, coordination without perfect information, and long-term deck management. The Tag system and combo mechanics add emergent strategic complexity.",
+        "highlights": [
+          "Face-down contribution system requires anticipating teammates' capabilities without revealing your own",
+          "Drive economy forces meaningful trade-offs between current challenges and future sustainability",
+          "Cross-genre Tag combinations create emergent synergy strategies",
+          "Exhaust cards provide high-impact but permanent resource decisions"
+        ]
+      },
+      "tension_drama": {
+        "score": 9,
+        "rationale": "Excellent tension generation through escalating Delve pressure, cooperative thresholds with imperfect information, and binary success/failure with team consequences. The Resonance track creates clear mounting stakes.",
+        "highlights": [
+          "Face-down contributions create uncertainty until simultaneous reveal",
+          "Escalating Delve Deck makes each round more dangerous than the last",
+          "Binary team victory/defeat means every challenge matters",
+          "Drive scarcity forces risky decisions about resource commitment"
+        ]
+      },
+      "player_agency": {
+        "score": 7,
+        "rationale": "Players have strong control over card play, resource allocation, and tactical coordination. However, the cooperative nature and escalating Delve responses somewhat limit individual impact on outcomes.",
+        "highlights": [
+          "Complete control over which cards to play and when",
+          "Drive spending decisions allow fine-tuned risk/reward calculations",
+          "Avatar abilities provide unique tactical options for each role",
+          "Combo system rewards creative card combinations"
+        ]
+      },
+      "replayability": {
+        "score": 8,
+        "rationale": "High variability through different Avatar combinations, modular POI and Theme cards, randomized Delve decks, and emergent Tag synergies. Different team compositions should play very differently.",
+        "highlights": [
+          "Modular POI and Theme cards create different Delve experiences",
+          "Multiple Avatar types with distinct play styles and deck pools",
+          "Randomized Challenge order changes tactical priorities each game",
+          "Cross-genre Tag system creates numerous combo possibilities"
+        ]
+      },
+      "social_interaction": {
+        "score": 9,
+        "rationale": "Exceptional cooperative interaction through shared challenges, resource coordination, information asymmetry, and collaborative planning. The face-down contribution system creates interesting social dynamics.",
+        "highlights": [
+          "Face-down contributions require trust and communication without revealing specifics",
+          "Drive resource sharing during Refresh phase",
+          "Collaborative threshold meeting demands active coordination",
+          "Team failure/success creates strong shared investment"
+        ]
+      },
+      "elegance": {
+        "score": 7,
+        "rationale": "The card-driven system elegantly supports the theme, and the Tag system creates clean synergies. However, the complexity of managing multiple resource types and phase interactions reduces overall elegance.",
+        "highlights": [
+          "Card-driven mechanics perfectly match the 'trapped in game logic' theme",
+          "Tag system provides unified framework for all interactions",
+          "Four-phase turn structure creates clear rhythm"
+        ]
+      }
+    },
+    "engagement_curve": [
+      {
+        "phase_name": "Setup",
+        "intensity": 4,
+        "driver": "Avatar selection and deck building creates anticipation for unique role synergies"
+      },
+      {
+        "phase_name": "Early Game",
+        "intensity": 6,
+        "driver": "Learning team dynamics and establishing coordination patterns while facing manageable challenges"
+      },
+      {
+        "phase_name": "Mid Game",
+        "intensity": 8,
+        "driver": "Escalating Delve pressure forces increasingly difficult resource decisions and combo strategies"
+      },
+      {
+        "phase_name": "Late Game",
+        "intensity": 9,
+        "driver": "High-stakes challenges with depleted resources create nail-biting moments requiring perfect coordination"
+      },
+      {
+        "phase_name": "Endgame",
+        "intensity": 10,
+        "driver": "Final challenges at maximum Resonance with team on the brink of failure create maximum tension"
+      }
+    ],
+    "engagement_variance": 2.15,
+    "engagement_hooks": [
+      "Face-down card contributions create suspense until simultaneous reveal",
+      "Cross-genre combinations produce surprising and flavorful results",
+      "Escalating difficulty creates mounting pressure and higher stakes",
+      "Cooperative coordination without perfect information requires communication and trust"
+    ],
+    "tension_sources": [
+      "Escalating Delve Deck makes each round more dangerous",
+      "Limited Drive tokens force difficult resource allocation decisions",
+      "Face-down contributions create uncertainty about team success until reveal",
+      "Binary team victory/defeat means individual failures affect everyone"
+    ],
+    "memorable_moments": [
+      "Perfect combo reveal where multiple cross-genre cards combine for massive threshold success",
+      "Narrow failure leading to Resonance spike that changes team strategy",
+      "Hero sacrificing powerful Exhaust card to prevent team defeat",
+      "Final challenge resolution determining whether reality is saved or corrupted"
+    ],
+    "improvement_suggestions": [
+      "Consider adding catch-up mechanisms to prevent early failures from spiraling",
+      "Provide clearer coordination tools to help with face-down contribution planning",
+      "Add more granular victory conditions beyond binary success/failure",
+      "Include optional difficulty scaling for groups with different experience levels"
+    ],
+    "thematic_cohesion": {
+      "score": 10,
+      "rationale": "Exceptional thematic integration where every mechanism directly reinforces the core concept. The card-driven play literally represents being inside game logic, Drive tokens represent capacity to impose counter-logic, and escalation represents the Delve fighting back.",
+      "highlights": [
+        "Card play instead of dice perfectly represents being inside game rule systems",
+        "Cross-genre Tags reflect corrupted reality where game types bleed together",
+        "Escalating Delve Deck represents growing instability and resistance",
+        "Cooperative thresholds represent team 'counter-resonance' to restore reality"
+      ]
+    },
+    "novelty_score": 90,
+    "novelty_notes": [
+      "Programmed Actions + Resource Management appears in 0% of reference games",
+      "Card Driven + Programmed Actions appears in 0% of reference games",
+      "Cooperative + Programmed Actions appears in 1% of reference games",
+      "The full 6-mechanism combination is unique in the reference set"
+    ]
+  },
+  "_cover_prompt": "A dramatic board game cover illustration for \"Harmonic Breach: Delve Protocol\". Theme: adventure. Tagline: When reality glitches, Heroes debug the world. Summary: Modern Earth where video game popularity has reached critical mass, creating 'Imprints' - resonance patterns that eventually manifest as physical 'Delves' where game logic overwrites reality. These pocket dimensions threaten to expand and corrupt baseline reality permanently unless specialized Heroes can enter them and restore harmonic balance. Each Delve reflects the genre and mechanics of whatever games created the original Imprint, leading to bizarre fusion spaces where fantasy dungeons might contain cyberpunk security systems, or horror mansions might have platformer physics."
+}
