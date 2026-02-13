@@ -37,22 +37,19 @@ See `design/campaign_progression.md` for details.
 Planned/typical layout:
 
 - `design/`
+  - `README.md` – design team roles, pipeline, and folder conventions.
   - `core_rules.md` – core mechanical rules (tiered success, Drive, tableaus, Perfect Counters).
   - `campaign_progression.md` – long‑term progression and reward systems.
-  - `resonance_spec.md` – (planned) Resonance deck and escalation rules.
-- `design/generated/`
-  - GameGrammar JSON design snapshots.
-- `engine/`
-  - Future simulators, validators, and digital tooling.
+  - `resonance_spec.md` – Resonance deck, tableau, and escalation rules.
+  - `generated/` – GameGrammar snapshots (JSON, Markdown, PDF).
+  - `agent_output/` – working drafts from Perplexity/Gemini (gitignored).
+- `engine/` (or `tools/`)
+  - Card generators (physical print-ready and digital), rough simulator to model the physical game, validators, and related tooling. Consume `design/` specs and `design/generated/` JSON.
 - `notes/`
   - Working documents, design diaries, and open questions.
 
 ## Collaboration Notes
 
-This repo is used by:
+Design is run as a multi-agent team led by a human executive producer/designer. The **design team roles and pipeline** (GameGrammar as paired developer, Perplexity/Gemini as design collaborators, Cursor as integrator, plus folder and source-of-truth conventions) are documented in **`design/README.md`**.
 
-- Human designer(s) iterating on rules and content.
-- AI design assistants (e.g., GameGrammar) generating structured JSON.
-- AI coding tools (Cursor, Kiro, etc.) building simulators and helpers.
-
-**Source of truth:** Update the Markdown specs in `design/` first, then reflect changes in JSON, tools, and printed materials.
+**Source of truth:** The Markdown specs in `design/` are canonical; update them first, then reflect changes in generated snapshots (e.g. GameGrammar JSON in `design/generated/`) and tooling.
